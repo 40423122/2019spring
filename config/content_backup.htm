@@ -89,24 +89,15 @@
 <h6>心得:因為是重修生跟學弟不太熟,所以比較是參與在討論的部分,通送次數比較少,但依舊有記錄每周心得及團體貢獻,在手足球裡面被分配到的是送球機構的設計<br/><br/>ps.(6/18)這邊發現期末的影片沒有放在自己學校的google帳戶內,以防老師找不到,所以6/18額外在此特地在此補充說明</h6>
 <h6><span style="color: #626262; background-color: #ffffff;">用個人帳號如期繳交的期末影片:</span></h6>
 <p><br/><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/mR41UceGkOc" width="560"></iframe></p><h1>期末考週彈珠檯</h1>
-<h6><a href="https://cad.onshape.com/documents/1c00aef3a8d081c3cabc0b69/w/ef1d9a2a0b3c25d6cd4c52ae/e/c284e1c17e1c7c138a990828">https://cad.onshape.com/documents/1c00aef3a8d081c3cabc0b69/w/ef1d9a2a0b3c25d6cd4c52ae/e/c284e1c17e1c7c138a990828</a><br/><br/><a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g6/issues/1">https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g6/issues/1</a></h6>
-<p>老師好我是40423122四設四甲林國蓁</p>
-<p>2019-6-17-11:57</p>
-<p>電腦的錄製軟體出了問題所以用手機替代錄影</p>
-<p>18週期末考 我負責的是球檯的繪製</p>
-<p>途中遇到很多狀況</p>
-<p>一開始的全班網路跑不動</p>
-<p>而在老師修正後</p>
-<p>在網路方面-onshape</p>
-<p>即使電腦沒有運行其他應用程式卻也是非常的當</p>
-<p>導致畫圖十分的不順利</p>
-<p>修改一個尺寸就會當三分鐘</p>
-<p>途中也有告知老師此問題</p>
-<p>老師是說是個人電腦問題</p>
-<p>但全班同學其實都有這個狀況</p>
-<p>可能還需要進一步的改善</p>
-<p>而在vrep方面還在努力中</p>
-<p>先拍影片告知進度</p>
-<p>圖檔就負在個人網頁上了</p>
-<p>網路有點慢</p>
-<p>程式方面也在努力中</p>
+<h6>onshape:<br/><a href="https://cad.onshape.com/documents/1c00aef3a8d081c3cabc0b69/w/ef1d9a2a0b3c25d6cd4c52ae/e/c284e1c17e1c7c138a990828">https://cad.onshape.com/documents/1c00aef3a8d081c3cabc0b69/w/ef1d9a2a0b3c25d6cd4c52ae/e/c284e1c17e1c7c138a990828</a><br/><br/>github issues:<br/><a href="https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g6/issues/1">https://github.com/mdekmol/cd2019a-task1-2019cda_t1_g6/issues/1</a></h6>
+<p>2019-6-17-11:57<br/>老師好我是40423122四設四甲林國蓁<br/><br/>電腦的錄製軟體出了問題所以用手機替代錄影,第18週期末考,我和陳霖負責的是"球檯的繪製",途中遇到很多狀況,一開始的全班網路跑不動,而在老師修正後,在網路方面(onshape)還是有狀況,即使電腦沒有運行其他應用程式,還是非常的當,導致畫圖十分的不順利,修改一個尺寸就會當三分鐘,途中也有告知老師此問題,老師是說是個人電腦問題,但全班同學其實都有這個狀況,小組也有因此而拖延到後續操作時間<br/>往後可能需要考慮是否將此電腦教室的部分設定在重開機後重置,否則很多學生下載了一堆無用的軟體,可能無形中損害電腦的使用效益和同學的權益.<br/><br/>而在vrep和程式方面還在努力中,先拍影片告知進度,圖檔付在個人網頁上<br/><br/><br/></p>
+<p>2019-6-20-00:21<br/><br/>製作出了pinball machine v-rep simulator,以下為操作影片<iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/FLV4oz4HB48" width="560"></iframe></p>
+<p><span>V-rep ttt 檔案:</span><br/><a href="https://drive.google.com/file/d/1zdIu07mhxdCVrpU4ZcnCn_MovFec96Yv/view?usp=sharing">https://drive.google.com/file/d/1zdIu07mhxdCVrpU4ZcnCn_MovFec96Yv/view?usp=sharing</a></p>
+<p>程式:</p>
+<p>import vrep<br/>import sys, math<br/>import keyboard<br/>#導入vrep和sys,math,keyboard<br/>vrep.simxFinish(-1)<br/><br/>clientID = vrep.simxStart('127.0.0.1', 19997, True, True, 5000, 5)<br/>if clientID!= -1:<br/>print("Connected to remote server")<br/>else:<br/>print('Connection not successful')<br/>sys.exit('Could not connect')</p>
+<p>KickBallV = 360 <br/>R_KickBallVel = (math.pi/180)*KickBallV<br/>B_KickBallVel = -(math.pi/180)*KickBallV</p>
+<p>errorCode,left_handle=vrep.simxGetObjectHandle(clientID,'left',vrep.simx_opmode_oneshot_wait)<br/>errorCode,right_handle=vrep.simxGetObjectHandle(clientID,'right',vrep.simx_opmode_oneshot_wait)<br/>errorCode,pull_handle=vrep.simxGetObjectHandle(clientID,'pull',vrep.simx_opmode_oneshot_wait)<br/>vrep.simxSetJointTargetVelocity(clientID,left_handle,0,vrep.simx_opmode_oneshot_wait)<br/>vrep.simxSetJointTargetVelocity(clientID,right_handle,0,vrep.simx_opmode_oneshot_wait)<br/>vrep.simxSetJointTargetVelocity(clientID,pull_handle,0,vrep.simx_opmode_oneshot_wait)<br/>#將vrep中的傳動left,right(左右桿的旋轉),和pull(打擊桿的拉伸)定義<br/><br/>def a1():<br/>errorCode=vrep.simxSetJointTargetVelocity(clientID,left_handle,R_KickBallVel,vrep.simx_opmode_oneshot_wait)<br/>def d1(): <br/>errorCode=vrep.simxSetJointTargetVelocity(clientID,right_handle,B_KickBallVel,vrep.simx_opmode_oneshot_wait)<br/>def w1():<br/>errorCode=vrep.simxSetJointTargetVelocity(clientID,pull_handle,1,vrep.simx_opmode_oneshot_wait)<br/>#將旋轉和拉伸的速度定義</p>
+<p>vrep.simxStartSimulation(clientID,vrep.simx_opmode_oneshot_wait)</p>
+<p><br/>while True:<br/>try:<br/>if keyboard.is_pressed('a'):<br/>a1()<br/>elif keyboard.is_pressed('l'):<br/>d1()<br/>else:<br/>errorCode=vrep.simxSetJointTargetVelocity(clientID,left_handle,B_KickBallVel,vrep.simx_opmode_oneshot_wait)<br/>errorCode=vrep.simxSetJointTargetVelocity(clientID,right_handle,R_KickBallVel,vrep.simx_opmode_oneshot_wait)<br/>#在此定義按下按鍵"a",左邊搖桿執行動作,按下按鍵"l",右邊搖桿執行動作<br/>if keyboard.is_pressed('up'):<br/>w1()<br/>else:<br/>errorCode=vrep.simxSetJointTargetVelocity(clientID,pull_handle,-1,vrep.simx_opmode_oneshot_wait)<br/>except:<br/>break<br/>#在這邊定義按下按鍵"上箭頭",拉深桿執行動作</p>
+<p><br/>問題排除:<br/>因為這邊有用到keyboard的語法,如果沒有下載keyboard軟體是沒辦法使用的,會跑出錯誤,所以在需要設定按鍵操作之下,我們必須在執行視窗輸入:<br/>(進入tmp)cd tmp<br/>(下載keyboard軟體)pip install keyboard<br/>下載完畢後重新開啟即可使用<br/><br/>結果統整:<br/><br/>本人繪圖零件和陳霖負責繪製球檯<br/><br/><img alt="" height="579" src="/images/1.jpg" width="1029"/></p>
+<p><img alt="" height="390" src="/images/2.jpg" width="693"/><br/>其他零件<br/><br/><img alt="" height="936" src="/images/3.jpg" width="1919"/><br/><img alt="" height="933" src="/images/4.jpg" width="1918"/><br/><img alt="" height="936" src="/images/5.jpg" width="1919"/><br/><br/><br/><img alt="" height="748" src="/images/6.jpg" width="1534"/></p>
